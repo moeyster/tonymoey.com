@@ -1,0 +1,536 @@
+/*------------------------------------------------------------------
+
+	Template Name:	Hexa - Personal Resume/CV/Portfolio Html Template
+    Template URI: http://themeaone.com/hexa-preview/index.html
+    Description: Personal Resume/CV/Portfolio Html Template
+    Author: ThemeAone
+    Author URI: http://themeaone.com/
+    Version: 1.0
+
+-------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+	[Table of contents]
+
+	01. Body
+	02. Common Classes
+	03. Header Area
+	04. Intro Area
+	05. About Area
+	06. Resume Area
+	07. Portfolio Area
+	08. Service Area
+	09. Testimonial Area
+	10. Blog Area
+	11. Footer Area
+
+-------------------------------------------------------------------*/
+
+/*----------------------
+	1. Body
+------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $bgLight;
+    color: $textColor;
+    font-family: $gOpenSans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    visibility: visible;
+}
+html,
+body {
+    height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $headingColor;
+    margin-top: 0;
+}
+/*Heading Color For Dark BG*/
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6,
+.bg-dark-gray h1,
+.bg-dark-gray h2,
+.bg-dark-gray h3,
+.bg-dark-gray h4,
+.bg-dark-gray h5,
+.bg-dark-gray h6 {
+    color: $colorWhite;
+}
+/*Text Color For Dark BG*/
+.bg-dark,
+.bg-dark p,
+.bg-dark-gray,
+.bg-dark-gray p {
+    color: darken($colorWhite, 20);
+}
+p::last-child {
+    margin-bottom: 0;
+}
+a,
+a::before,
+*::before,
+*::after,
+i,
+button,
+input {
+    @include transition(all 0.3s ease 0s);
+}
+*:focus {
+    outline: medium none;
+}
+a,
+a:focus {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+a,
+a:hover {
+    text-decoration: none;
+}
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+}
+/* Blockquote */
+blockquote{
+    background-color: $themeColorOne;
+    border: none;
+    display: block;
+    float: left;
+    margin: 10px 0 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: "\f10d";
+        font-family: 'FontAwesome';
+        position: absolute;
+        left: 30px;
+        table-layout: 30px;
+        color: $textColor;
+        font-size: 60px;
+        top: 35px;
+        opacity: 0.3;
+        z-index: -1;
+    }
+    & p {
+        color: $colorWhite;
+        font-size: 18px;
+        font-style: italic;
+        line-height: 28px;
+        margin-bottom: 15px !important;
+    }
+    & span {
+        display: block;
+        font-size: 14px;
+        color: $colorWhite;
+        padding-left: 10px;
+        border-left: 3px solid $colorWhite;
+        line-height: 14px;
+    }
+}
+/*----------------------
+	2. Common Classes
+------------------------*/
+/* Overflow */
+.fix {
+    overflow: hidden;
+}
+/* Float */
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+/* Table & Table Cell */
+.table,
+.table-cell {
+    display: table;
+    height: 100%;
+    @media #{$largeMobile}{
+        display: block;
+        height: auto;
+    }
+}
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    @media #{$largeMobile}{
+        display: block;
+        height: auto;
+    }
+}
+/* Background Color */
+.bg-light {
+    background-color: $bgLight;
+}
+.bg-gray {
+    background-color: $bgGray;
+}
+.bg-dark {
+    background-color: $bgDark;
+}
+.bg-dark-gray {
+    background-color: $bgDarkGray;
+}
+/* Section */
+.section {
+    float: left;
+    width: 100%;
+}
+/* Margin Top */
+@for $i from 1 through 30 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+/* Margin Bottom */
+@for $i from 1 through 30 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+/* Padding Top */
+@for $i from 1 through 30 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+/* Padding Bottom */
+@for $i from 1 through 30 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+/* Input Placeholder */
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: inherit;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: inherit;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: inherit;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+/* Overlay */
+.overlay {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.overlay::before {
+    background: $themeColorOne;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left top, $themeColorOne, $themeColorTwo);
+    background: rgba(0, 0, 0, 0) linear-gradient(to right bottom, $themeColorOne, $themeColorTwo);
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.overlay.solid::before {
+    opacity: 1;
+}
+/* Section Title */
+.section-title {
+    margin-bottom: 80px;
+    & h1 {
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 22px;
+        margin-bottom: 0;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 15px;
+        @media #{$smallMobile}{
+            font-size: 24px;
+        }
+        & span {
+            color: $themeColorOne;
+        }
+        &::before {
+            position: absolute;
+            right: 100%;
+            width: 50px;
+            height: 1px;
+            content: "";
+            top: 50%;
+            background-color: $themeColorTwo;
+            @media #{$smallMobile}{
+                display: none;
+                width: 0;
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 100%;
+            width: 50px;
+            height: 1px;
+            content: "";
+            top: 50%;
+            background-color: $themeColorTwo;
+            @media #{$smallMobile}{
+                display: none;
+                width: 0;
+            }
+        }
+    }
+    &.white h1 {
+        color: $colorWhite;
+        & span {
+            color: $themeColorTwo;
+        }
+        &::before {
+            background-color: $colorWhite;
+        }
+        &::after {
+            background-color: $colorWhite;
+        }
+    }
+    & p {
+        margin-bottom: 0;
+        font-family: 'Dancing Script', cursive;
+    }
+}
+/* Slick Pagination */
+.slick-dots{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    height: 8px;
+    & li {
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        vertical-align: top;
+        & button {
+            width: 8px;
+            height: 8px;
+            border-radius: 50px;
+            background-color: $colorWhite;
+            display: block;
+            border: none;
+            opacity: 0.85;
+            text-indent: -99999px;
+        }
+        &.slick-active button {
+            width: 20px;
+            opacity: 1;
+        }
+    }
+}
+/* Page Banner Area */
+.page-banner-area {
+    background-image: image-url("images/section-bg/2.jpg");
+    padding: 160px 0 100px;
+    @media #{$largeMobile}{
+        padding: 140px 0 80px;
+    }
+    @media #{$smallMobile}{
+        padding: 120px 0 60px;
+    }
+}
+/* Page Banner */
+.page-banner {
+    & h2 {
+        color: $colorWhite;
+        font-size: 30px;
+        text-transform: capitalize;
+        line-height: 24px;
+        margin-bottom: 20px;
+        @media #{$smallMobile}{
+            font-size: 24px;
+            line-height: 18px;
+            margin-bottom: 10px;
+        }
+    }
+}
+/* Page Banner Breadcrumb */
+.breadcrumb {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    & li {
+        color: $colorWhite;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        & + li::before {
+            color: $colorWhite;
+        }
+        & a {
+            color: $colorWhite;
+            &:hover {
+                color: $themeColorOne;
+            }
+        }
+    }
+}
+/* Page Pagination */
+.page-pagination {
+    display: block;
+    & ul {
+        display: inline-block;
+        vertical-align: top;
+        & li {
+            display: block;
+            float: left;
+            margin-right: 6px;
+            &:last-child {
+                margin-right: 0;
+            }
+            & a {
+                display: block;
+                border-radius: 50px;
+                width: 32px;
+                line-height: 30px;
+                color: $textColor;
+                height: 32px;
+                border: 1px solid $textColor;
+                &:hover {
+                    border-color: $themeColorTwo;
+                    color: $themeColorTwo;
+                }
+                & i {
+                    display: block;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+/* Page Pagination Dark */
+.bg-dark .page-pagination, .bg-dark-gray .page-pagination {
+    & ul {
+        & li {
+            & a {
+                border: 1px solid darken($colorWhite, 20);
+                color: darken($colorWhite, 20);
+                &:hover {
+                    border-color: $themeColorTwo;
+                    color: $themeColorTwo;
+                }
+            }
+        }
+    }
+}
+/* Preloader */
+.preloader {
+  background-color: $themeColorOne;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.spinner {
+  height: 40px;
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $colorWhite;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/**
+ * kenburnsy - Easy to use JQuery plugin to make slideshows with Ken Burns effect
+ * @version v0.0.5
+ * @link https://github.com/ZeroOneStudio/kenburnsy
+ * @license MIT
+ */
+.kenburnsy {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.kenburnsy.fullscreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+.kenburnsy img {
+  display: none;
+}
+.kenburnsy .slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}

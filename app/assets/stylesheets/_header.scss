@@ -1,0 +1,311 @@
+/*----------------------------------
+	3. Header Area
+------------------------------------*/
+.header-area {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 15px 0;
+    @include transition(all 0.4s ease 0s);
+    /* Header Stick */
+    &.stick {
+        position: fixed;
+        background: $colorWhite;
+        box-shadow: 0 0 15px rgba($textColor, 0.15);
+        padding: 5px 0;
+        @media #{$largeMobile}{
+            padding: 0;
+        }
+        /* Header Stick Logo */
+        & .logo {
+            color: $themeColorTwo;
+        }
+        /* Header Stick Menu */
+        & .main-menu nav {
+            & > ul {
+                & > li {
+                    & > a {
+                        color: $textColor;
+                    }
+                    &.active a, &:hover a {
+                        color: $themeColorTwo;
+                    }
+                }
+            }
+        }
+        /* Header Stick Mobile Menu Open Close Button */
+        & .open-menu, & .close-menu {
+            & i {
+                background-color: $textColor;
+            }
+            &::before, &::after {
+                background-color: $textColor;
+            }
+        }
+        /* Header Stick Mobile Menu */
+        & .mean-nav {
+            & > ul {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0 0 10px;
+            }
+        }
+    }
+    /* Header Dark Stick */
+    &.dark.stick {
+        background: $bgDark;
+        box-shadow: 0 0 15px #000;
+        /* Header Stick Logo */
+        & .logo {
+            color: $themeColorTwo;
+        }
+        /* Header Stick Menu */
+        & .main-menu nav {
+            & > ul {
+                & > li {
+                    & > a {
+                        color: $colorWhite;
+                    }
+                    &.active a, &:hover a {
+                        color: $themeColorTwo;
+                    }
+                }
+            }
+        }
+        /* Header Stick Mobile Menu Open Close Button */
+        & .open-menu, & .close-menu {
+            & i {
+                background-color: $colorWhite;
+            }
+            &::before, &::after {
+                background-color: $colorWhite;
+            }
+        }
+    }
+}
+/* Header Logo */
+.header-logo {
+    padding: 23px 0;
+    @media #{$largeMobile}{
+        width: 100%;
+    }
+    & .logo {
+        color: $colorWhite;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+        vertical-align: top;
+    }
+}
+/* Main Menu */
+.main-menu {
+    & nav {
+        & > ul {
+            & > li {
+                display: block;
+                float: left;
+                margin-left: 30px;
+                padding: 23px 0;
+                position: relative;
+                @media #{$tabletDevice}{
+                    margin-left: 25px;
+                }
+                & > a {
+                    color: $colorWhite;
+                    display: block;
+                    font-weight: 600;
+                    line-height: 24px;
+                    text-transform: uppercase;
+                    position: relative;
+                    @media #{$tabletDevice}{
+                        font-size: 13px;
+                    }
+                    &:hover {
+                        color: $themeColorTwo;
+                    }
+                }
+                &.active > a {
+                    color: $themeColorTwo;
+                }
+            }
+        }
+    }
+}
+/* Mobile Menu Open Button */
+.open-menu {
+    display: block;
+    padding: 7px 0;
+    position: relative;
+    width: 26px;
+    & i {
+        background-color: $colorWhite;
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    &::before, &::after {
+        background-color: $colorWhite;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+    &::before {
+        top: 0;
+        bottom: auto;
+    }
+    &::after {
+        bottom: 0;
+        top: auto;
+    }
+}
+/* Mobile Menu Close Button */
+.close-menu {
+    display: block;
+    padding: 7px 0;
+    position: relative;
+    width: 26px;
+    & i {
+        background-color: $colorWhite;
+        height: 2px;
+        width: 100%;
+        display: block;
+        animation: 1s ease 0s normal forwards closeMiddlepBar;
+        -webkit-animation: 1s ease 0s normal forwards closeMiddlepBar;
+    }
+    &::before, &::after {
+        background-color: $colorWhite;
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+    &::before {
+        top: 0;
+        bottom: auto;
+        -webkit-animation: 1s ease 0s normal forwards closeTopBar;
+    }
+    &::after {
+        bottom: 0;
+        top: auto;
+        -webkit-animation: 1s ease 0s normal forwards closeBottomBar;
+    }
+}
+@keyframes closeTopBar {
+  0% {
+    top: 7px;
+  }
+  30% {
+    @include transform(rotate(45deg));
+    top: 7px;
+  }
+  100% {
+    @include transform(rotate(45deg));
+    top: 7px;
+  }
+}
+@-webkit-keyframes closeTopBar {
+  0% {
+    top: 7px;
+  }
+  30% {
+    @include transform(rotate(45deg));
+    top: 7px;
+  }
+  100% {
+    @include transform(rotate(45deg));
+    top: 7px;
+  }
+}
+@keyframes closeMiddlepBar {
+  0% {
+    background-color: $colorWhite;
+  }
+  20% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@-webkit-keyframes closeMiddlepBar {
+  0% {
+    background-color: $colorWhite;
+  }
+  20% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes closeBottomBar {
+  0% {
+    bottom: 7px;
+  }
+  30% {
+    @include transform(rotate(-45deg));
+    bottom: 7px;
+  }
+  100% {
+    @include transform(rotate(-45deg));
+    bottom: 7px;
+  }
+}
+@-webkit-keyframes closeBottomBar {
+  0% {
+    bottom: 7px;
+  }
+  30% {
+    @include transform(rotate(-45deg));
+    bottom: 7px;
+  }
+  100% {
+    @include transform(rotate(-45deg));
+    bottom: 7px;
+  }
+}
+/* Mobile Menu */
+.mobile-menu {
+    width: 100%;
+    float: left;
+}
+.mean-bar {
+    position: relative;
+    & .meanmenu-reveal {
+        position: absolute;
+        top: -43px;
+    }
+}
+/* Mean Nav */
+.mean-nav {
+    & > ul {
+        background-color: $colorWhite;
+        padding: 10px 20px;
+        box-shadow: 0 5px 10px rgba($textColor, 0.15);
+        & > li {
+            position: relative;
+            & > a {
+                display: block;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 5px 0;
+                text-transform: uppercase;
+                &:hover {
+                    color: $themeColorTwo;
+                }
+            }
+            &.active > a {
+                color: $themeColorTwo;
+            }
+        }
+    }
+}

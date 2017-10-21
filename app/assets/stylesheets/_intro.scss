@@ -1,0 +1,138 @@
+/*----------------------------------
+	4. Intro Area
+------------------------------------*/
+.intro-area {
+    margin: 0;
+    padding: 100px 0;
+    width: 100%;
+    @media #{$largeMobile}{
+        padding: 150px 0;
+    }
+}
+/*Youtube & Vimeo Wrapper*/
+.table.mb_YTPlayer, .table.vimeo_player {
+    display: table !important;
+}
+.mb_YTPlayer, .vimeo_player {
+    display: inherit !important;
+}
+.mbYTP_wrapper, .vimeo_player_wrapper {
+    z-index: -9 !important;
+}
+/* Intro Content */
+.intro-content {
+    & h1 {
+        color: $colorWhite;
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        @media #{$largeMobile}{
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        @media #{$smallMobile}{
+            font-size: 24px;
+        }
+        & span {
+            font-size: 30px;
+            display: block;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+            font-weight: 600;
+            @media #{$largeMobile}{
+                font-size: 24px;
+            }
+            @media #{$smallMobile}{
+                font-size: 18px;
+            }
+        }
+    }
+    & .cd-headline {
+        color: $colorWhite;
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 0;
+        @media #{$largeMobile}{
+            font-size: 18px;
+        }
+        @media #{$smallMobile}{
+            font-size: 14px;
+        }
+        & span {
+            padding: 0;
+        }
+        & .cd-words-wrapper {
+            font-weight: 700;
+            & b {
+                font-weight: inherit;
+                top: 0;
+                border-bottom: 2px solid $colorWhite;
+            }
+            &::after {
+                background: $colorWhite;
+            }
+        }
+    }
+}
+/* Scroll Down Button */
+.scroll-down {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    bottom: 40px;
+    display: block;
+    height: 44px;
+    left: 50%;
+    line-height: 40px;
+    margin-left: -12px;
+    position: absolute;
+    text-align: center;
+    width: 24px;
+    & i {
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: fadebounce;
+        animation-name: fadebounce;
+        background: #fff none repeat scroll 0 0;
+        border-radius: 3px;
+        display: inline-block;
+        height: 8px;
+        width: 4px;
+    }
+}
+@-webkit-keyframes fadebounce {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+@keyframes fadebounce {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 1;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,20 @@
+// Font Family
+$gOpenSans: 'Open Sans', sans-serif;
+// Theme Color
+$themeColorOne: #3f51b5;
+$themeColorTwo: #ff4081;
+// Text & Heading Color
+$colorWhite: #fff;
+$textColor: #333;
+$headingColor: #282528;
+// Background Color
+$bgLight: #fff;
+$bgGray: #f1f1f1;
+$bgDark: #161616;
+$bgDarkGray: #232323;
+// Responsive Variables
+$laptopDevice : 'only screen and (min-width: 1200px) and (max-width: 1600px)';
+$desktopDevice : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$tabletDevice:'only screen and (min-width: 768px) and (max-width: 991px)';
+$largeMobile:'only screen and (max-width: 767px)';
+$smallMobile: 'only screen and (max-width: 479px)';

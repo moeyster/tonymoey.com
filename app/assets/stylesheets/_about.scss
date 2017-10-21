@@ -1,0 +1,119 @@
+/*----------------------------------
+	5. About Area
+------------------------------------*/
+.about-area {}
+/* About Image */
+.about-image {
+    & img {
+        width: 100%;
+    }
+}
+/* About Content */
+.about-content {
+    margin-top: 15px;
+    @media #{$desktopDevice}{
+        margin-top: 0;
+    }
+    & h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    & p {
+        & a {
+            color: $themeColorTwo;
+            &:hover {
+                color: $themeColorOne;
+            }
+        }
+    }
+    & img {
+        margin-top: 10px;
+    }
+}
+/* Skills */
+.skills {
+    margin-top: 15px;
+    @media #{$desktopDevice}{
+        margin-top: 0;
+    }
+    & h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+        &::before {
+            background-color: $themeColorTwo;
+            content: "";
+            height: 1px;
+            left: 100%;
+            margin-left: 15px;
+            position: absolute;
+            top: 50%;
+            width: 30px;
+        }
+    }
+}
+/* Progress Text */
+.progress-text {
+    text-transform: uppercase;
+    color: $textColor;
+    margin-bottom: 5px;
+    line-height: 18px;
+    font-size: 12px;
+}
+/* Progress */
+.progress {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    height: 3px;
+    margin-bottom: 15px;
+    overflow: visible;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    & .progress-bar {
+        background: $themeColorOne;
+        background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left, $themeColorOne, $themeColorTwo);
+        background: rgba(0, 0, 0, 0) linear-gradient(to right, $themeColorOne, $themeColorTwo);
+        position: relative;
+        @include transition(all 1.5s ease 0.3s);
+        color: inherit;
+        opacity: 0;
+        &:before {
+            position: absolute;
+            right: 0;
+            content: attr(data-present);
+            top: -24px;
+            color: inherit;
+        }
+    }
+}
+
+/*---- Funfact Area ----*/
+.funfact-area {}
+/* Single Fact */
+.single-fact {
+    & i {
+        font-size: 46px;
+        color: $colorWhite;
+        margin-bottom: 20px;
+    }
+    & h1 {
+        font-size: 46px;
+        line-height: 1;
+        color: $colorWhite;
+        font-weight: 700;
+        margin-bottom: 5px;
+        @media #{$smallMobile}{
+            font-size: 40px;
+        }
+    }
+    & p {
+        color: $colorWhite;
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+}

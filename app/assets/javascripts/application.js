@@ -12,4 +12,10 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require vendor/jquery-1.12.0.min
+//= require vendor/modernizr-2.8.3.min
+//= require bootstrap.min
+//= require headlines
+//= require plugins
+//= require main
+//= require static_pages

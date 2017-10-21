@@ -1,0 +1,112 @@
+/*----------------------------------
+	7. Portfolio Area
+------------------------------------*/
+portfolio-area {}
+/* Filter Wrapper */
+.filter-wrapper {
+    & h5 {
+        display: inline-block;
+        font-weight: 600;
+        line-height: 18px;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        @media #{$largeMobile}{
+            display: none;
+        }
+    }
+}
+/* Portfolio Filter */
+.portfolio-filter {
+    display: inline-block;
+    & button {
+        background-color: transparent;
+        border: medium none;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 18px;
+        margin: 0 10px;
+        text-transform: capitalize;
+        &.active {
+            color: $themeColorTwo;
+        }
+    }
+}
+/* Portfolio Grid */
+.portfolio-grid {
+    float: left;
+    width: 100%;
+}
+/* Single Portfolio */
+.single-portfolio {
+    position: relative;
+    display: block;
+    color: $colorWhite;
+    &::before {
+        background: $themeColorOne;
+        background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left top, $themeColorOne, $themeColorTwo);
+        background: rgba(0, 0, 0, 0) linear-gradient(to right bottom, $themeColorOne, $themeColorTwo);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        content: "";
+        opacity: 0;
+        z-index: 2;
+        @include transition(all 0.3s ease 0s);
+    }
+    &:hover:before {
+        opacity: 0.85;
+    }
+    /* Image */
+    & img {
+        width: 100%;
+    }
+    /* Content */
+    & .content {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        color: $colorWhite;
+        right: 0;
+        @include transform(translateY(-50%));
+        z-index: 5;
+        text-align: center;
+        @include transition(all 0.3s ease 0s);
+        /* Title */
+        & .title {
+            color: $colorWhite;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            top: -30px;
+            position: relative;
+            @include transition(all 0.3s ease 0s);
+            opacity: 0;
+        }
+        /* Category */
+        & .cat {
+            color: $colorWhite;
+            font-size: 12px;
+            display: block;
+            text-transform: uppercase;
+            top: 30px;
+            line-height: 20px;
+            position: relative;
+            @include transition(all 0.3s ease 0s);
+            opacity: 0;
+        }
+    }
+    &:hover .content {
+        opacity: 1;
+        & .title {
+            top: 0;
+            opacity: 1;
+        }
+        & .cat {
+            top: 0;
+            opacity: 1;
+        }
+    }
+}

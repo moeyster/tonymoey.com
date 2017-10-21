@@ -1,0 +1,135 @@
+/*----------------------------------
+	6. Resume Area
+------------------------------------*/
+.resume-area {}
+/* Resume Wrapper */
+.resume-wrapper {
+    /* Resume Title */
+    & .resume-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        line-height: 40px;
+        position: relative;
+        display: inline-block;
+        &::before {
+            background-color: $themeColorTwo;
+            content: "";
+            height: 1px;
+            left: 100%;
+            margin-left: 15px;
+            position: absolute;
+            top: 50%;
+            width: 30px;
+        }
+    }
+    /* Single Resume */
+    .single-resume {
+        & .date {
+            position: relative;
+            background-color: $themeColorTwo;
+            font-size: 12p;
+            color: $colorWhite;
+            line-height: 18px;
+            padding: 4px 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        & h4 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+            & span {
+                font-weight: 600;
+                color: $themeColorOne;
+            }
+        }
+        & p {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+/*---- Work Progress Area ----*/
+.work-progress-area {}
+/* Single Progress */
+.single-progress {
+    margin-bottom: 30px;
+    width: 20%;
+    padding: 0 15px;
+    float: left;
+    position: relative;
+    @media #{$largeMobile}{
+        width: 33.33%;
+    }
+    @media #{$smallMobile}{
+        width: 50%;
+    }
+    &::before {
+        border-top: 2px dashed $colorWhite;
+        content: "";
+        left: 50%;
+        margin-left: 55px;
+        position: absolute;
+        top: 39px;
+        width: 130px;
+        @media #{$desktopDevice}{
+            width: 83px;
+        }
+        @media #{$tabletDevice}{
+            width: 40px;
+        }
+        @media #{$largeMobile}{
+            width: 41px;
+        }
+    }
+    @media #{$largeMobile}{
+        &:nth-child(3)::before {
+            width: 0;
+            display: none;
+        }
+    }
+    @media #{$smallMobile}{
+        &:nth-child(3)::before {
+            width: 41px;
+            display: block;
+        }
+        &:nth-child(2)::before, &:nth-child(4)::before {
+            width: 0;
+            display: none;
+        }
+    }
+    &:last-child::before {
+        width: 0;
+        display: none;
+    }
+    & i {
+        font-size: 36px;
+        width: 80px;
+        height: 80px;
+        color: $colorWhite;
+        line-height: 80px;
+        border: 2px solid $colorWhite;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    &:hover i {
+        background-color: $colorWhite;
+        color: $themeColorTwo;
+    }
+    & h4 {
+        color: $colorWhite;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    & p {
+        font-size: 14px;
+        color: $colorWhite;
+        margin-bottom: 0;
+    }
+}

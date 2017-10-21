@@ -1,0 +1,99 @@
+/*----------------------------------
+	11. Footer Area
+------------------------------------*/
+.footer-area {}
+/*---- Contact Area ----*/
+.contact-area {}
+/* Single Contact Info */
+.single-contact-info {
+    & i {
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: $colorWhite;
+    }
+    & p {
+        color: $colorWhite;
+        margin-bottom: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+/* Contact Form */
+.contact-form {
+    & input[type="text"], input[type="email"] {
+        width: 100%;
+        border: 1px solid $colorWhite;
+        color: $colorWhite;
+        height: 40px;
+        padding: 7px 15px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        border-radius: 3px;
+    }
+    & textarea {
+        width: 100%;
+        border: 1px solid $colorWhite;
+        color: $colorWhite;
+        padding: 5px 15px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        height: 98px;
+        resize: none;
+    }
+    & input[type="submit"] {
+        width: 100%;
+        border: 1px solid $colorWhite;
+        color: $colorWhite;
+        height: 40px;
+        padding: 7px 15px;
+        background-color: transparent;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        &:hover {
+            background-color: $colorWhite;
+            color: $themeColorTwo;
+        }
+    }
+}
+/*---- Footer Bottom ----*/
+.footer-bottom {}
+/* Footer Social */
+.social {
+    & a {
+        border: 1px solid $colorWhite;
+        border-radius: 50%;
+        color: $colorWhite;
+        display: inline-block;
+        height: 30px;
+        margin: 0 1px;
+        width: 30px;
+        text-align: center;
+        & i {
+            font-size: 14px;
+            line-height: 30px;
+            @include transition(none 0s ease 0s);
+        }
+        &:hover {
+            background-color: $colorWhite;
+            color: $themeColorTwo;
+        }
+    }
+}
+/* Footer Copyright */
+.footer-copyright {
+    & p {
+        font-size: 13px;
+        line-height: 24px;
+        margin-bottom: 0;
+        color: $colorWhite;
+        & a {
+            color: $colorWhite;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
