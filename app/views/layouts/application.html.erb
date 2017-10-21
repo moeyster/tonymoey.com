@@ -12,14 +12,16 @@
   </head>
 
   <body>
-    <!-- Preloader
-    ============================================ -->
-    <div class="preloader">
-    	<div class="spinner">
-    	  <div class="double-bounce1"></div>
-    	  <div class="double-bounce2"></div>
-    	</div>
-    </div>
+    <!-- Preloader -->
+    <% if params[:controller] == "static_pages" && params[:action] == "index" %>
+      <div class="preloader">
+      	<div class="spinner">
+      	  <div class="double-bounce1"></div>
+      	  <div class="double-bounce2"></div>
+      	</div>
+      </div>
+    <% end %>
+
     <%= render 'layouts/header' %>
     <%= yield %>
     <%= render 'layouts/footer' %>

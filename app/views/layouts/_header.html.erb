@@ -12,13 +12,12 @@
 				<div class="main-menu float-right">
 					<nav>
 						<ul>
-							<li class="active"><a href="index.html#intro">home</a></li>
-							<li><a href="index.html#about">about</a></li>
-							<li><a href="index.html#resume">resume</a></li>
-							<li><a href="index.html#portfolio">portfolio</a></li>
-							<li><a href="index.html#service">service</a></li>
-							<li><a href="index.html#blog">blog</a></li>
-							<li><a href="index.html#contact">contact</a></li>
+							<li><%= link_to "home", root_path(anchor: "intro") %></li>
+							<li><%= link_to "about", root_path(anchor: "about") %></li>
+							<li><%= link_to "resume", root_path(anchor: "resume") %></li>							
+							<li><%= link_to "services", root_path(anchor: "service") %></li>
+							<li><%= link_to "blog", root_path(anchor: "blog") %></li>
+							<li><%= link_to "contact", root_path(anchor: "contact") %></li>
 						</ul>
 					</nav>
 				</div>
