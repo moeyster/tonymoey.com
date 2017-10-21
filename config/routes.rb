@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :projects do
     collection do
       get :json_parser
+      post :parse_json
     end
   end
 end

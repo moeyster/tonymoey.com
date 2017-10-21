@@ -38,15 +38,18 @@
       <h3>Insert JSON data</h3>
       <!--Comment Form-->
       <div class="comment-form row">
-          <form action="#">
-              <div class="col-xs-12 mb-20"><textarea placeholder="JSON data"></textarea></div>
-              <div class="col-xs-12"><input type="submit" value="Parse"></div>
-          </form>
-          
+          <%= simple_form_for :json_content, url: parse_json_projects_path, remote: true do |f| %>
+            <div class="col-xs-12 mb-20">
+              <%= f.input :content, as: :text, label: false %>
+            </div>
+            <div class="col-xs-12">
+              <%= f.button :submit, "Parse" %>
+            </div>
+          <% end %>
+
       </div>
       <br />
-
-      <div class="resume-output">
+      <div class="resume-output" style="display:none;">
         <div class="row resume-content">
           <div class="col-md-12">
             <div class="row">
