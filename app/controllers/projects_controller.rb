@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  include Ttt33Helper
+
   def json_parser
     @default_json = '
       {
@@ -78,14 +80,32 @@ class ProjectsController < ApplicationController
       @response = JSON.parse(params[:json_content][:content]) rescue nil
     end
     respond_to do |format|
-        format.js { render 'projects/parse_json'}
+      format.js { render 'projects/parse_json'}
     end
   end
 
   def ttt_index
-
+    @origBoard = [0,1,2,3,4,5,6,7,8]
   end
 
   def ttt_submit
+    $aiPlayer = "X"
+    $huPlayer = "O"
+    string = params[:params]["origBoard"].gsub("&quot;", '"')
+    @origBoard = JSON.parse(string)
+    player_input = params[:position].to_i
+    @origBoard[player_input] = $huPlayer
+    @result = minimax(@origBoard, $aiPlayer)
+    ai_move = @result["index"].to_i
+
+    @origBoard[ai_move] = $aiPlayer
+    @result = minimax(@origBoard, $aiPlayer)
+    @next_move = @result["index"]
+    @score = @result["score"]
+    puts "Board: #{@origBoard}"
+    puts "Result: #{@result}"
+    respond_to do |format|
+      format.js { render 'projects/ttt_submit'}
+    end
   end
 end

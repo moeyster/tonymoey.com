@@ -1,3 +1,53 @@
+<style>
+  body {
+  min-width: 400px;
+  text-align: center;
+  }
+
+  #gameMap {
+  min-width: 120px;
+  }
+
+  button {
+  height: 100px;
+  width: 100px;
+  vertical-align: top;
+  padding: none;border: none;
+  font-size: 75px;
+  background-color: #2C62E0;
+  margin: 5px 5px 5px 5px;
+  border-radius: 15px;
+  }
+
+  button:disabled {
+  /*	background-color: inherit;
+  color: inherit;*/
+  }
+
+  button:focus {
+  outline: 0;
+  }
+
+  .hvr-grow:hover:enabled {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  }
+
+  .hvr-grow:hover:enabled .ttt-buttons{
+    display: block;
+  }
+
+  .ttt-buttons {
+    display: none;
+  }
+  .fa-circle-o {
+    color: #CDD1D2;
+  }
+
+  .reset-button {
+    display: none;
+  }
+</style>
 <!-- Page Banner Area
 ============================================ -->
 <div class="page-banner-area section overlay">
@@ -20,7 +70,49 @@
 ============================================ -->
 <div id="pages" class="pages-area section bg-light pb-60 pt-100">
     <div class="container">
-
-
-    </div
+      <h1>Beat me if you can</h1>
+      <h3 class="ttt-status"></h3>
+      <br />
+      <div class="tic-tac-toe">
+        <div id="gameMap">
+          <div style="display: inline;">
+            <%= button_to ttt_submit_projects_path(position:0), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-0" do %>
+              <span class="ttt-buttons" id="btn-icon-0"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:1), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-1" do %>
+              <span class="ttt-buttons" id="btn-icon-1"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:2), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-2" do %>
+              <span class="ttt-buttons" id="btn-icon-2"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+          </div>
+          <div>
+            <%= button_to ttt_submit_projects_path(position:3), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-3" do %>
+              <span class="ttt-buttons" id="btn-icon-3"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:4), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-4" do %>
+              <span class="ttt-buttons" id="btn-icon-4"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:5), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-5" do %>
+              <span class="ttt-buttons" id="btn-icon-5"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+          </div>
+          <div>
+            <%= button_to ttt_submit_projects_path(position:6), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-6" do %>
+              <span class="ttt-buttons" id="btn-icon-6"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:7), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-7" do %>
+              <span class="ttt-buttons" id="btn-icon-7"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+            <%= button_to ttt_submit_projects_path(position:8), remote: true, params: {'params[origBoard]' => @origBoard.to_s}, class: "btn-game hvr-grow", form: {style: 'display:inline-block;'}, id: "btn-8" do %>
+              <span class="ttt-buttons" id="btn-icon-8"><i class="fa fa-circle-o" aria-hidden="true"></i></span>
+            <% end %>
+          </div>
+        </div>
+        <br />
+        <div class="reset-button">
+          <%= link_to "Reset", ttt_index_projects_path, method: :get, class: "btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    </div>
 </div>

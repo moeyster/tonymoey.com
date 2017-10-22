@@ -1,0 +1,27 @@
+<% if @next_move.nil? %>
+  <% if @score == 0 %>
+    $('.ttt-status').text("It's a tie");
+    $('.ttt-status').css("color", "red");
+  <% elsif @score == 10 %>
+    $('.ttt-status').text("You lose!");
+    $('.ttt-status').css("color", "red");
+  <% else %>
+    $('.ttt-status').text("You win?!");
+  <% end %>
+  $('.reset-button').show();
+<% end %>
+
+<% @origBoard.each_with_index do |val, index| %>
+  <% if val == "X" %>
+    $('#btn-icon-<%= index %>').empty();
+    $('#btn-icon-<%= index %>').append("<i class='fa fa-times' aria-hidden='true'>");
+    $('#btn-<%= index %>').prop('disabled', true);
+    $('#btn-icon-<%= index %>').show();
+  <% elsif val == "O" %>
+    $('#btn-icon-<%= index %>').empty();
+    $('#btn-icon-<%= index %>').append("<i class='fa fa-circle-o' aria-hidden='true'>");
+    $('#btn-<%= index %>').prop('disabled', true);
+    $('#btn-icon-<%= index %>').show();
+  <% end %>
+<% end %>
+$("[name='params[origBoard]']").val("<%= @origBoard %>")
