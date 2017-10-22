@@ -3,25 +3,25 @@ class ProjectsController < ApplicationController
     @default_json = '
       {
         "data": {
-          "name": "Tony Moey",
+          "name": "Tony Moey Seng Leong",
           "email":"moeyster@gmail.com",
           "phone": "+60126185510",
           "target_role": "Senior Full Stack Engineer",
-          "profile_description":"Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.",
+          "profile_description":"A Monash University graduate proficient in Ruby on Rails, web development tools and software development methodologies combined with excellent industry experience as a back-end web developer in the Ruby on Rails framework, and as a product and project manager for Southeast Asia’s leading startup in the service matching industry. Consistently recognized for problem solving, project management, communication and leadership skills used to effectively and efficiently manage teams and complete projects. Open and willing to learn new skills, equally successful in both team and self-directed settings.",
           "domain": "tonymoey.com",
           "location": "Subang Jaya, Selangor, Malaysia",
           "skill_set": [
             {
-              "title": "Web Design",
-              "explaination": "Assertively exploit wireless initiatives rather than synergistic core competencies."
+              "title": "Web Development",
+              "explaination": "Translate and build business ideas into stunning web applications by making use of technoligies such as Wordpress or Ruby on Rails"
             },
             {
-              "title": "Interface Design",
-              "explaination": "Credibly streamline mission-critical value with multifunctional functionalities."
+              "title": "Project Management",
+              "explaination": "Helping sofware development teams manage tasks and projects to it\'s successful deployment while also applying my skills in all freelance projects"
             },
             {
-              "title": "Project Direction",
-              "explaination": "Proven ability to lead and manage a wide variety of design and development projects in team and independent situations."
+              "title": "Product Design",
+              "explaination": "Design intuitive and effective product features that hit your target metrics and business goals"
             }
           ],
           "technicals" : ["HTML", "CSS", "Javascript", "JQuery", "Ruby", "Ruby on Rails", "Wordpress"],
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
               "company": "Recommend.My",
               "role": "Ruby On Rails Developer",
               "year": "2015 - 2016",
-              "details": "First job as a Ruby on Rails developer with Southeast Asias leading startup in the services industry collaborating with other developers all over Malaysia and Indonesia"
+              "details": "First job as a Ruby on Rails developer with Southeast Asia\'s leading startup in the services industry collaborating with other developers all over Malaysia and Indonesia"
             },
             {
               "company": "Subang Jaya Squash",
@@ -48,9 +48,9 @@ class ProjectsController < ApplicationController
           "educations" : [
             {
               "school": "Monash Unversity Malaysia",
-              "certification": "Bachelors in Information Technology and Systems",
+              "certification": "Bachelor\'s in Information Technology and Systems",
               "year": "2011 - 2014",
-              "details": "Attained Bachelors degree, winning the best presenter award in the E-Business class and was featured in the Star for final year project with Institue Jantung Negara (IJN)"
+              "details": "Attained Bachelor\'s degree, winning the best presenter award in the E-Business class and was featured in the Star for final year project with Institue Jantung Negara (IJN)"
             },
             {
               "school": "Sunway College",
