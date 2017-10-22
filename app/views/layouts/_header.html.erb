@@ -13,12 +13,12 @@
 				<div class="main-menu float-right">
 					<nav>
 						<ul>
-							<li><%= link_to "home", root_path(anchor: "intro") %></li>
-							<li><%= link_to "about", root_path(anchor: "about") %></li>
-							<li><%= link_to "resume", root_path(anchor: "resume") %></li>
-							<li><%= link_to "projects", json_parser_projects_path %></li>
-							<li><%= link_to "services", root_path(anchor: "service") %></li>
-							<li><%= link_to "contact", root_path(anchor: "contact") %></li>
+							<li><%= link_to "home", root_path(anchor: "intro"), method: :get %></li>
+							<li><%= link_to "about", root_path(anchor: "about"), method: :get %></li>
+							<li><%= link_to "resume", root_path(anchor: "resume"), method: :get %></li>
+							<li><%= link_to "projects", json_parser_projects_path, method: :get %></li>
+							<li><%= link_to "services", root_path(anchor: "service"), method: :get %></li>
+							<li><%= link_to "contact", root_path(anchor: "contact"), method: :get %></li>
 						</ul>
 					</nav>
 				</div>
