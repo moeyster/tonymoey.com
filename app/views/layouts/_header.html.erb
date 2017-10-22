@@ -16,7 +16,14 @@
 							<li><%= link_to "home", root_path(anchor: "intro"), method: :get %></li>
 							<li><%= link_to "about", root_path(anchor: "about"), method: :get %></li>
 							<li><%= link_to "resume", root_path(anchor: "resume"), method: :get %></li>
-							<li><%= link_to "projects", json_parser_projects_path, method: :get %></li>
+
+							<li>
+							  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
+							  <ul class="dropdown-menu">
+							    <li><%= link_to "JSON Parser", json_parser_projects_path, method: :get %></li>
+							    <li><%= link_to "Unbeatable Tic Tac Toe", "#", method: :get %></li>
+							  </ul>
+							</li>
 							<li><%= link_to "services", root_path(anchor: "service"), method: :get %></li>
 							<li><%= link_to "contact", root_path(anchor: "contact"), method: :get %></li>
 						</ul>
