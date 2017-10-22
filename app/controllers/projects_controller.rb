@@ -81,4 +81,11 @@ class ProjectsController < ApplicationController
         format.js { render 'projects/parse_json'}
     end
   end
+
+  def ttt_index
+
+  end
+
+  def ttt_submit
+  end
 end

@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   resources :projects do
     collection do
-      get :json_parser
+      get  :json_parser
       post :parse_json
+      get  :ttt_index
+      post :ttt_submit
     end
   end
 end
