@@ -6,7 +6,7 @@
     border-radius: 0px;
   }
   .resume-content {
-    margin:20px 10px 20px 10px;
+    margin:100px 70px 100px 70px;
 
   }
 
@@ -40,7 +40,7 @@
       <div class="comment-form row">
           <%= simple_form_for :json_content, url: parse_json_projects_path, remote: true do |f| %>
             <div class="col-xs-12 mb-20">
-              <%= f.input :content, as: :text, label: false %>
+              <%= f.input :content, as: :text, label: false, input_html: { value: @default_json, style: "height:1000px;"} %>
               <div class="response-error-message" style="display: none;"></div>
             </div>
             <div class="col-xs-12">
@@ -50,17 +50,18 @@
 
       </div>
       <br />
+      <h3 class="resume-output-header" style="display:none;">Generated Resume/CV</h3>
       <div class="resume-output" style="display:none;">
         <div class="row resume-content">
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-9">
-                <h1>Tony Moey Seng Leong</h1>
-                <h3>Senior Web Developer</h3>
+                <h1 class="resume-name"></h1>
+                <h3 class="resume-target-role"></h3>
               </div>
               <div class="col-md-3">
-                <p>Email: moeyster@gmail.com</p>
-                <p>Phone: +6012 - 618 5510</p>
+                Email: <span class="resume-email"></span>
+                Phone: <span class="resume-phone"></span>
               </div>
             </div>
             <hr />
@@ -73,7 +74,7 @@
                 <h3>Profile</h3>
               </div>
               <div class="col-md-9">
-                <p>Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.</p>
+                <p class="resume-profile-description"></p>
               </div>
             </div>
             <hr />
@@ -81,161 +82,32 @@
         </div>
         <div class="row resume-content">
           <div class="col-md-12">
-            <div class="row">
+            <div class="row resume-skill-set">
               <div class="col-md-3">
                 <h3>Skills</h3>
               </div>
-              <div class="col-md-3">
-                <h4>Web Design</h4>
-                <p>Assertively exploit wireless initiatives rather than synergistic core competencies.</p>
-              </div>
-              <div class="col-md-3">
-                <h4>Interface Design</h4>
-                <p>Credibly streamline mission-critical value with multifunctional functionalities.</p>
-              </div>
-              <div class="col-md-3">
-                <h4>Project Direction</h4>
-                <p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</p>
-              </div>
             </div>
             <hr />
           </div>
         </div>
         <div class="row resume-content">
           <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-3">
-                <h3>Technical</h3>
-              </div>
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                  <div class="col-md-3 col-xs-6">
-                    <p>HTML</p>
-                  </div>
-                </div>
-              </div>
+            <div class="row resume-technical-set">
             </div>
             <hr />
           </div>
         </div>
         <div class="row resume-content">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-3">
-                <h3>Experience</h3>
-              </div>
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-9">
-                    <h4>Facebook</h4>
-                    <h5>Senior Interface Designer</h5>
-                  </div>
-                  <div class="col-md-3" style="text-align: right;">
-                    <strong>2005 - 2007</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-12 resume-experience-set">
+          </div>
+        </div>
+        <div class="row resume-content">
+          <div class="col-md-12 resume-education-set">
+          </div>
+        </div>
+        <div class="row resume-content">
+          <div class="col-md-12 resume-footer">
 
-            <div class="row">
-              <div class="col-md-3">
-              </div>
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-9">
-                    <h4>Facebook</h4>
-                    <h5>Senior Interface Designer</h5>
-                  </div>
-                  <div class="col-md-3" style="text-align: right;">
-                    <strong>2005 - 2007</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-3">
-              </div>
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-9">
-                    <h4>Facebook</h4>
-                    <h5>Senior Interface Designer</h5>
-                  </div>
-                  <div class="col-md-3" style="text-align: right;">
-                    <strong>2005 - 2007</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div class="row resume-content">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-3">
-                <h3>Education</h3>
-              </div>
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-9">
-                    <h4>Facebook</h4>
-                    <h5>Senior Interface Designer</h5>
-                  </div>
-                  <div class="col-md-3" style="text-align: right;">
-                    <strong>2005 - 2007</strong>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-          </div>
-        </div>
-        <div class="row resume-content">
-          <div class="col-md-12">
-            <p style="text-align: center;">Jonathan Doe — name@yourdomain.com — (313) - 867-5309</p>
           </div>
         </div>
       </div>

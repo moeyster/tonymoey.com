@@ -10,7 +10,134 @@ $('.resume-output').hide();
   $('.resume-output').hide();
 <% else %>
   $('.resume-output').show();
+  $('.resume-output-header').show();
   $('.response-error-message').text("JSON successfully parsed below");
   $('.response-error-message').css("color", "green");
   $('.response-error-message').show();
+  $('.resume-name').text("<%= @response["data"]["name"] %>");
+  $('.resume-target-role').text("<%= @response["data"]["target_role"] %>");
+  $('.resume-email').text("<%= @response["data"]["email"] %>");
+  $('.resume-phone').text("<%= @response["data"]["phone"] %>");
+  $('.resume-profile-description').text("<%= @response["data"]["profile_description"] %>");
+
+  $('.resume-skill-set').empty();
+  $('.resume-skill-set').append("<div class='col-md-3'><h3>Skills</h3></div>");
+  <% @response["data"]["skill_set"].each_with_index do |skill, index| %>
+    $('.resume-skill-set').append("<div class='col-md-3 resume-skills-<%= index %>'></div>");
+    $('.resume-skills-<%= index %>').append("<h4><%= skill["title"] %></h4>");
+    $('.resume-skills-<%= index %>').append("<p><%= skill["explaination"] %></p>");
+  <% end %>
+
+  $('.resume-technical-set').empty();
+  $('.resume-technical-set').append("<div class='col-md-3'><h3>Technical</h3></div>");
+  $('.resume-technical-set').append("<div class='col-md-9'><div class='row resume-tech-set-row'></div></div>");
+  <% @response["data"]["technicals"].each_with_index do |tech, index| %>
+    $('.resume-tech-set-row').append("<div class='col-md-3 col-xs-6 resume-tech-set-item-<%= index %>'></div>");
+    $('.resume-tech-set-item-<%= index %>').append("<p><%= tech %></p>");
+  <% end %>
+
+  $('.resume-experience-set').empty();
+  $('.resume-experience-set').append("<div class='row'><div class='col-md-3'><h3>Experience</h3></div><div class='col-md-9 resume-experience-content'></div></div><hr />");
+  <% @response["data"]["experiences"].each_with_index do |exp, index| %>
+    $('.resume-experience-content').append("<div class='row exp-object-<%= index %>'><div class='col-md-9 exp-header-<%= index %>'></div><div class='col-md-3 exp-year-<%= index %>' style='text-align: right;'></div><div class='col-md-12 exp-desc-<%= index %>'></div></div>");
+      $('.exp-header-<%= index %>').append("<h4><%= exp["company"] %></h4>");
+      $('.exp-header-<%= index %>').append("<h5><%= exp["role"] %></h5>");
+      $('.exp-year-<%= index %>').append("<strong><%= exp["year"] %></strong>");
+      $('.exp-desc-<%= index %>').append("<p><%= exp["details"] %></p>");
+  <% end %>
+
+  $('.resume-education-set').empty();
+  $('.resume-education-set').append("<div class='row'><div class='col-md-3'><h3>Education</h3></div><div class='col-md-9 resume-education-content'></div></div><hr />");
+  <% @response["data"]["educations"].each_with_index do |edu, index| %>
+    $('.resume-education-content').append("<div class='row edu-object-<%= index %>'><div class='col-md-9 edu-header-<%= index %>'></div><div class='col-md-3 edu-year-<%= index %>' style='text-align: right;'></div><div class='col-md-12 edu-desc-<%= index %>'></div></div>");
+      $('.edu-header-<%= index %>').append("<h4><%= edu["school"] %></h4>");
+      $('.edu-header-<%= index %>').append("<h5><%= edu["certification"] %></h5>");
+      $('.edu-year-<%= index %>').append("<strong><%= edu["year"] %></strong>");
+      $('.edu-desc-<%= index %>').append("<p><%= edu["details"] %></p>");
+  <% end %>
+
+  $('.resume-footer').empty();
+  $('.resume-footer').append("<p style='text-align: center;'><%= @response["data"]["domain"] %> - <%= @response["data"]["location"] %></p>");
+
 <% end %>
+
+/*
+resume-name
+resume-target-role
+resume-email
+resume-phone
+resume-profile-description
+resume-skill-set
+  <h4>Web Design</h4>
+  <p>Assertively exploit wireless initiatives rather than synergistic core competencies.</p>
+resume-skill-set
+
+
+{
+  "data": {
+    "name": "Tony Moey",
+    "email":"moeyster@gmail.com",
+    "phone": "+60126185510",
+    "target_role": "Senior Full Stack Engineer",
+    "profile_description":"Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.",
+    "domain": "tonymoey.com",
+    "location": "Subang Jaya, Selangor, Malaysia",
+    "skill_set": [
+      {
+        "title": "Web Design",
+        "explaination": "Assertively exploit wireless initiatives rather than synergistic core competencies."
+      },
+      {
+        "title": "Interface Design",
+        "explaination": "Credibly streamline mission-critical value with multifunctional functionalities."
+      },
+      {
+        "title": "Project Direction",
+        "explaination": "Proven ability to lead and manage a wide variety of design and development projects in team and independent situations."
+      }
+    ],
+    "technicals" : ["HTML", "CSS", "Javascript", "JQuery", "Ruby", "Ruby on Rails", "Wordpress"],
+    "experiences" : [
+      {
+        "company": "Recommend.My",
+        "role": "Product And Project Manager",
+        "year": "2016 - Present",
+        "details": "Promoted to Product and Project Manager, focusing on improving development life cycle of the dev teams, working with product owners on designing features and translating all product features to developers"
+      },
+      {
+        "company": "Recommend.My",
+        "role": "Ruby On Rails Developer",
+        "year": "2015 - 2016",
+        "details": "First job as a Ruby on Rails developer with Southeast Asias leading startup in the services industry collaborating with other developers all over Malaysia and Indonesia"
+      },
+      {
+        "company": "Subang Jaya Squash",
+        "role": "Squash Coach",
+        "year": "2012 - 2016",
+        "details": "Worked part time as a squash coach for the Subang Jaya junior squash team, having the opportunity to manage teams to the National Juniors in Ipoh and Kuantan"
+      }
+    ],
+    "educations" : [
+      {
+        "school": "Monash Unversity Malaysia",
+        "certification": "Bachelors in Information Technology and Systems",
+        "year": "2011 - 2014",
+        "details": "Attained Bachelors degree, winning the best presenter award in the E-Business class and was featured in the Star for final year project with Institue Jantung Negara (IJN)"
+      },
+      {
+        "school": "Sunway College",
+        "certification": "MUFY",
+        "year": "2010 - 2010",
+        "details": "Attended the Monash University Foundation Year programme as an entrance qualification into Monash University  "
+      },
+      {
+        "school": "SMK Subang Jaya",
+        "certification": "SPM",
+        "year": "2005 - 2009",
+        "details": "Completed the SPM examination while serving as President to the Leo Club and representing the school in Squash, Volleyball and Drama"
+      }
+    ]
+  }
+}
+
+*/
