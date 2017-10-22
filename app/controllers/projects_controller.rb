@@ -3,8 +3,11 @@ class ProjectsController < ApplicationController
   end
 
   def parse_json
-    @resume = JSON.parse(params[:json_content][:content])
-
+    if params[:json_content][:content].blank?
+      @response = "empty"
+    else
+      @response = JSON.parse(params[:json_content][:content]) rescue nil
+    end
     respond_to do |format|
         format.js { render 'projects/parse_json'}
     end

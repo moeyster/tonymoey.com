@@ -41,6 +41,7 @@
           <%= simple_form_for :json_content, url: parse_json_projects_path, remote: true do |f| %>
             <div class="col-xs-12 mb-20">
               <%= f.input :content, as: :text, label: false %>
+              <div class="response-error-message" style="display: none;"></div>
             </div>
             <div class="col-xs-12">
               <%= f.button :submit, "Parse" %>

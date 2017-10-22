@@ -1,0 +1,16 @@
+<% if @response == "empty" %>
+$('.response-error-message').text("This field cannot be empty");
+$('.response-error-message').css("color", "red");
+$('.response-error-message').show();
+$('.resume-output').hide();
+<% elsif @response.nil? %>
+  $('.response-error-message').text("There was an error parsing the JSON data above. Please check your JSON syntax");
+  $('.response-error-message').css("color", "red");
+  $('.response-error-message').show();
+  $('.resume-output').hide();
+<% else %>
+  $('.resume-output').show();
+  $('.response-error-message').text("JSON successfully parsed below");
+  $('.response-error-message').css("color", "green");
+  $('.response-error-message').show();
+<% end %>
